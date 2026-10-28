@@ -63,7 +63,7 @@ h2{font-size:clamp(2rem,5vw,3.4rem);letter-spacing:-.03em}
 .pc{background:var(--sf);border:1px solid var(--ln);border-radius:20px;overflow:hidden;display:grid;grid-template-columns:280px 1fr;transition:border-color .25s}
 .pc:hover{border-color:var(--ac)}
 .pv{background:var(--term);color:var(--termt);padding:22px;font:14px/1.8 ui-monospace,Menlo,Consolas,monospace;display:flex;flex-direction:column;justify-content:center}
-.pv.logo{padding:0;background:#fffbeb;align-items:center}.pv.logo img{width:100%;height:100%;object-fit:contain}
+.pv{position:relative;overflow:hidden}.pv .cov{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 20%}.shots{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--ln);margin:0 0 18px}.pv.logo{padding:0;background:#fffbeb;align-items:center}.pv.logo img{width:100%;height:100%;object-fit:contain}
 .pv .g{color:#e8b98a}.pv .k{color:#b79c8a}
 .pb{padding:26px 30px 30px}
 .meta{color:var(--mu);font-size:.88rem;margin-bottom:8px}
@@ -142,14 +142,14 @@ footer{padding:36px 0 56px;color:var(--mu);font-size:.9rem;display:flex;justify-
 <section id="work"><div class="w">
 <div class="sh"><h2>Selected projects.</h2><p class="sub">Each one started as a real problem, then went through requirements, documentation and a prototype.</p></div>
 <div class="pl">
-<article class="pc"><div class="pv"><span class="k">$</span> allfresh --recipe<br><span class="g">bahan:</span> telur, tomat, bawang<br><span class="k">ai →</span> resep rekomendasi<br><span class="k">checkout</span> bahan kurang <span class="g">✓</span></div>
+<article class="pc"><div class="pv"><img class="cov" src="allfresh.jpg" alt="AllFresh app screens" onerror="this.remove()"><span class="k">$</span> allfresh --recipe<br><span class="g">bahan:</span> telur, tomat, bawang<br><span class="k">ai →</span> resep rekomendasi<br><span class="k">checkout</span> bahan kurang <span class="g">✓</span></div>
 <div class="pb"><div class="meta">Campus minor project · App prototype</div><h3>AllFresh</h3>
 <ul><li>Gathered system requirements and documented <b style="color:var(--tx)">12+ use cases</b> with use case, ERD and activity diagrams.</li><li>Designed an AI recipe recommendation feature based on the ingredients a user already has, with checkout for missing items.</li><li>Designed the app screens in Figma.</li></ul>
 <div class="tg"><span>Use Case</span><span>ERD</span><span>Activity Diagram</span><span>UI/UX</span><span>AI</span></div><div class="row" style="margin-top:18px"><a class="ghost" href="https://docs.google.com/document/d/1v619UqSu_OhTxtGHMF7ysJorBPiBGBEiVP6fnI3q1cI/edit?usp=sharing" target="_blank" rel="noopener">Read documentation</a><a class="ghost" href="https://www.figma.com/design/TqcmkivYKY0wuFW2Uls1K5/All-fresh?node-id=0-1&amp;t=Usorfd3d6xHtSZbS-0" target="_blank" rel="noopener">Open Figma design</a></div></div></article>
 <article class="pc"><div class="pv logo"><img src="saji-logo.png" alt="Saji logo: Surplus and Affordable Just-In-time"></div>
 <div class="pb"><div class="meta">Venture Creation course · Co-Founder &amp; CEO, team of 5</div><h3>Saji</h3>
 <ul><li>A digital platform that connects consumers with restaurants, cafes, bakeries and supermarkets that have <b style="color:var(--tx)">surplus food</b> still fit to eat, at lower prices, to help reduce food waste.</li><li>Developed the <b style="color:var(--tx)">Business Model Canvas</b> and a robust design analysis, then built a Figma prototype covering allergy preferences, search and filters, checkout, payment, order tracking and a personal impact page.</li><li>Ran user interviews and a feedback grid, and implemented <b style="color:var(--tx)">5 improvements</b> from the feedback, including allergy-aware catalog, allergen alerts and merchant ratings.</li></ul>
-<div class="tg"><span>Business Model Canvas</span><span>Figma prototype</span><span>User interviews</span><span>Leadership</span></div>
+<img class="shots" src="saji-screens.jpg" alt="Saji app prototype screens" onerror="this.remove()"><div class="tg"><span>Business Model Canvas</span><span>Figma prototype</span><span>User interviews</span><span>Leadership</span></div>
 <div class="row" style="margin-top:18px"><a class="ghost" href="https://www.figma.com/proto/mN5W9XFg8yJa9j6w8yaWQO/SAJI?node-id=41-38&amp;t=QUMOFMoK4x8hDKq4-1" target="_blank" rel="noopener">Open prototype</a><a class="ghost" href="saji-venture-creation.pdf" target="_blank" rel="noopener">View full deck (PDF)</a><a class="ghost" href="https://youtu.be/egwcyOJWJws" target="_blank" rel="noopener">Interview video</a></div></div></article>
 <article class="pc"><div class="pv"><span class="k">dashboard</span> kepolisian<br><span class="k">personel</span> <span class="g">30</span> · <span class="k">satuan</span> <span class="g">8</span><br><span class="k">rata skor</span> <span class="g">80.5</span><br><span class="k">total kasus</span> <span class="g">2,255</span></div>
 <div class="pb"><div class="meta">Coursework · Excel</div><h3>Police performance dashboard</h3>

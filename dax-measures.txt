@@ -1,0 +1,16 @@
+// Relationships (Power Pivot > Diagram View)
+// 'personel kinerja'[NRP]          -> anggota[NRP]
+// 'personel kinerja'[SatuanID]     -> satuan[SatuanID]
+// 'personel kinerja'[PelatihanID]  -> pelatihan[PelatihanID]
+// 'personel kinerja'[SertifikasiID]-> sertifikasi[SertifikasiID]
+
+Total Personel := DISTINCTCOUNT('personel kinerja'[NRP])
+Rata Skor := AVERAGE('personel kinerja'[SkorPenilaian])
+Total Kasus := SUM('personel kinerja'[JumlahKasus])
+Rata Kepuasan := AVERAGE('personel kinerja'[KepuasanKomunitas])
+Rata Respon Jam := AVERAGE('personel kinerja'[ResponWaktu (Jam)])
+Kasus per Personel := DIVIDE([Total Kasus], [Total Personel])
+Persen Skor Tinggi := DIVIDE(CALCULATE(COUNTROWS('personel kinerja'), 'personel kinerja'[KategoriSkor] = "Tinggi"), COUNTROWS('personel kinerja'))
+Selisih dari Rata Semua := [Rata Skor] - CALCULATE([Rata Skor], ALL('personel kinerja'))
+Ranking Satuan := RANKX(ALL(satuan[NamaSatuan]), [Rata Skor])
+Rata Hari Pelatihan ke Evaluasi := AVERAGEX('personel kinerja', DATEDIFF('personel kinerja'[TanggalPelatihan], 'personel kinerja'[TanggalEvaluasi], DAY))

@@ -4,195 +4,404 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Joshua Bong Louisa · Portfolio</title>
+<meta name="description" content="Joshua Bong Louisa, Information Systems student at Binus University. Project management and business analysis intern candidate with 4 AWS Academy credentials.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700;800&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#f7f4f2;--sf:#fff;--ln:#e2d8d1;--tx:#2a1a14;--mu:#6f5d54;--ac:#7a4b38;--hi:#b97a4a;--term:#3b2419;--termt:#f1e4da;
-box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#150f0c;--sf:#1f1713;--ln:#33261f;--tx:#f1e9e3;--mu:#b3a095;--ac:#d29a72;--hi:#e8b98a;--term:#0e0907;--termt:#e9d9cc}}
-:root[data-theme="dark"]{--bg:#150f0c;--sf:#1f1713;--ln:#33261f;--tx:#f1e9e3;--mu:#b3a095;--ac:#d29a72;--hi:#e8b98a;--term:#0e0907;--termt:#e9d9cc}
-html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px);scroll-behavior:smooth}
+:root{
+  --bg:#f5f2ec;--sf:#fffdf9;--sf2:#ede8de;--ln:#ddd6c8;--tx:#14181f;--mu:#596170;
+  --ac:#0d5c50;--ac-ink:#ffffff;--acs:#dcebe5;--hot:#d9581f;--hots:#fbe3d6;
+  --shadow:0 1px 2px rgba(20,24,31,.04),0 12px 32px -18px rgba(20,24,31,.22);
+  --r:18px;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0e1215;--sf:#151a1f;--sf2:#1b2228;--ln:#28313a;--tx:#eef1f2;--mu:#9ca6af;
+  --ac:#5fcab2;--ac-ink:#0b1714;--acs:#16332d;--hot:#ff8c55;--hots:#3a2218;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 16px 40px -20px rgba(0,0,0,.7);color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0e1215;--sf:#151a1f;--sf2:#1b2228;--ln:#28313a;--tx:#eef1f2;--mu:#9ca6af;
+  --ac:#5fcab2;--ac-ink:#0b1714;--acs:#16332d;--hot:#ff8c55;--hots:#3a2218;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 16px 40px -20px rgba(0,0,0,.7);color-scheme:dark}
+
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--tx);font:17px/1.65 Manrope,system-ui,sans-serif;overflow-x:hidden}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--bg);color:var(--tx);font:17px/1.65 "Instrument Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  padding-bottom:env(safe-area-inset-bottom,0px)}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.5;
+  background-image:radial-gradient(color-mix(in srgb,var(--tx) 9%,transparent) 1px,transparent 1px);background-size:22px 22px;
+  mask-image:linear-gradient(to bottom,#000,transparent 70%)}
 a{color:inherit}
-:focus-visible{outline:3px solid var(--hi);outline-offset:3px}
-h1,h2,h3{font-family:Sora,system-ui,sans-serif;margin:0;line-height:1.05}
-.w{max-width:1100px;margin:0 auto;padding:0 24px}
-header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--ln)}
-.top .w{display:flex;justify-content:space-between;align-items:center;height:64px}
-.top nav{display:flex;gap:24px}
-.top nav a{text-decoration:none;color:var(--mu);font-weight:500;font-size:.95rem}
-.top nav a:hover{color:var(--tx)}
-.pill{padding:9px 20px;border-radius:999px;background:var(--ac);color:#fff;font-weight:600;text-decoration:none;font-size:.95rem}
-.pill:hover{background:var(--hi);color:#1b0f0a}
-.ghost{padding:9px 20px;border-radius:999px;border:1.5px solid var(--ln);font-weight:600;text-decoration:none;font-size:.95rem}
-.ghost:hover{border-color:var(--ac);color:var(--ac)}
-.row{display:flex;gap:12px;flex-wrap:wrap}
-.hero{position:relative;isolation:isolate;padding:72px 0 56px}
-.glow{position:absolute;left:50%;width:100vw;transform:translateX(-50%);top:-64px;height:660px;z-index:-1;pointer-events:none;background:radial-gradient(520px 300px at 22% 25%,color-mix(in srgb,var(--ac) 28%,transparent),transparent 70%),radial-gradient(460px 280px at 80% 55%,color-mix(in srgb,var(--hi) 20%,transparent),transparent 70%)}
-.kick{color:var(--mu);margin:0 0 18px;font-weight:500}
-h1{font-size:clamp(2.4rem,10.5vw,8rem);font-weight:800;letter-spacing:-.05em;line-height:.95}
-h1 span{display:block}
-h1 .o{color:transparent;-webkit-text-stroke:2px var(--tx)}
-.hgrid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center;margin-top:48px}
-.lead{font-size:1.15rem;color:var(--mu);max-width:50ch;margin:0 0 32px}
+img{max-width:100%;display:block}
+:focus-visible{outline:3px solid var(--hot);outline-offset:3px;border-radius:6px}
+h1,h2,h3,h4{font-family:Fraunces,Georgia,serif;font-weight:600;margin:0;line-height:1.1;letter-spacing:-.015em}
+.w{max-width:1140px;margin:0 auto;padding:0 24px}
+.mono{font-family:"JetBrains Mono",ui-monospace,Consolas,monospace;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
+
+/* header */
+header.top{position:sticky;top:0;z-index:20;padding-top:env(safe-area-inset-top,0px);
+  background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid transparent;transition:border-color .3s}
+header.top.sc{border-bottom-color:var(--ln)}
+.top .w{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700}
+.brand i{width:34px;height:34px;border-radius:10px;background:var(--ac);color:var(--ac-ink);display:grid;place-items:center;font:italic 600 1.05rem Fraunces,serif}
+.top nav{display:flex;gap:4px}
+.top nav a{text-decoration:none;color:var(--mu);font-weight:500;font-size:.94rem;padding:8px 12px;border-radius:999px;transition:color .2s,background .2s}
+.top nav a:hover{color:var(--tx);background:var(--sf2)}
+.tools{display:flex;align-items:center;gap:8px}
+.tog{width:40px;height:40px;border-radius:999px;border:1px solid var(--ln);background:var(--sf);color:var(--tx);cursor:pointer;display:grid;place-items:center}
+.tog:hover{border-color:var(--ac)}
+.tog svg{width:18px;height:18px}
+.tog .sun{display:none}
+:root[data-theme="dark"] .tog .sun{display:block}:root[data-theme="dark"] .tog .moon{display:none}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .tog .sun{display:block}:root:not([data-theme="light"]) .tog .moon{display:none}}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:999px;font-weight:600;font-size:.95rem;text-decoration:none;border:1.5px solid transparent;transition:transform .2s,background .2s,border-color .2s,color .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.p{background:var(--ac);color:var(--ac-ink)}
+.btn.p:hover{background:color-mix(in srgb,var(--ac) 85%,var(--tx))}
+.btn.o{border-color:var(--ln);background:var(--sf)}
+.btn.o:hover{border-color:var(--ac);color:var(--ac)}
+.btn.sm{padding:8px 16px;font-size:.88rem}
+.btn svg{width:16px;height:16px}
+.row{display:flex;flex-wrap:wrap;gap:12px}
+
+/* hero */
+.hero{padding:72px 0 80px}
+.hgrid{display:grid;grid-template-columns:1.25fr .75fr;gap:64px;align-items:center}
+.avail{display:inline-flex;align-items:center;gap:10px;padding:7px 14px 7px 10px;border-radius:999px;background:var(--acs);color:var(--ac);font-weight:600;font-size:.88rem;margin-bottom:26px}
+.avail b{width:9px;height:9px;border-radius:50%;background:var(--ac);box-shadow:0 0 0 0 var(--ac);animation:pulse 2.2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 9px transparent}100%{box-shadow:0 0 0 0 transparent}}
+h1{font-size:clamp(2.9rem,7.4vw,5.6rem);font-weight:600;letter-spacing:-.035em;line-height:.98}
+h1 em{font-style:italic;color:var(--ac)}
+.role{font-size:1.18rem;font-weight:600;margin:22px 0 14px;color:var(--tx)}
+.role span{color:var(--hot)}
+.lead{font-size:1.1rem;color:var(--mu);max-width:54ch;margin:0 0 32px}
 .lead b{color:var(--tx);font-weight:600}
-.term{background:var(--term);color:var(--termt);border-radius:16px;border:1px solid var(--ln);overflow:hidden;font:15px/1.9 ui-monospace,Menlo,Consolas,monospace;margin-top:28px}
-.term .bar{display:flex;gap:7px;padding:12px 16px;border-bottom:1px solid #ffffff14}
-.term .bar i{width:11px;height:11px;border-radius:50%;background:#ffffff26}
-.term .bd{padding:18px 20px}
-.term .k{color:#b79c8a}.term .v{color:#fff}.term .g{color:#e8b98a}
-.ph{width:100%;max-width:440px;justify-self:end;border-radius:24px;overflow:hidden;border:1px solid var(--ln);box-shadow:0 30px 60px -36px rgba(0,0,0,.55);background:var(--sf)}
-.ph img{display:block;width:100%;height:auto;max-height:600px;object-fit:cover;object-position:50% 20%}
-.mq{border-block:1px solid var(--ln);overflow:hidden;white-space:nowrap;padding:16px 0}
-.mq div{display:inline-block;animation:mq 30s linear infinite;font:700 1.15rem Sora,sans-serif;color:var(--mu)}
-.mq span{margin:0 26px}.mq span:nth-child(even){color:var(--ac)}
-@keyframes mq{to{transform:translateX(-50%)}}
-section{padding:88px 0;border-top:1px solid var(--ln)}
-.sh{margin-bottom:36px}
-h2{font-size:clamp(2rem,5vw,3.4rem);letter-spacing:-.03em}
-.sub{color:var(--mu);margin:12px 0 0;max-width:58ch}
-.about{display:grid;grid-template-columns:1.2fr .8fr;gap:56px}
-.about p{margin:0 0 18px;max-width:62ch;color:var(--mu)}
-.about b{color:var(--tx);font-weight:600}
-.stats{display:grid;gap:14px;align-content:start}
-.stat{background:var(--sf);border:1px solid var(--ln);border-radius:16px;padding:20px 24px;display:flex;align-items:center;gap:20px}
-.stat strong{font:800 2.4rem Sora,sans-serif;color:var(--ac);min-width:86px}
-.stat span{color:var(--mu);line-height:1.35}
-.pl{display:grid;gap:22px}
-.pc{background:var(--sf);border:1px solid var(--ln);border-radius:20px;overflow:hidden;display:grid;grid-template-columns:280px 1fr;transition:border-color .25s}
-.pc:hover{border-color:var(--ac)}
-.pv{background:var(--term);color:var(--termt);padding:22px;font:14px/1.8 ui-monospace,Menlo,Consolas,monospace;display:flex;flex-direction:column;justify-content:center}
-.pv{position:relative;overflow:hidden}.pv .cov{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 20%}.shots{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--ln);margin:0 0 18px}.pv.logo{padding:0;background:#fffbeb;align-items:center}.pv.logo img{width:100%;height:100%;object-fit:contain}
-.pv .g{color:#e8b98a}.pv .k{color:#b79c8a}
-.pb{padding:26px 30px 30px}
-.meta{color:var(--mu);font-size:.88rem;margin-bottom:8px}
-.pb h3{font-size:1.5rem;margin-bottom:10px;letter-spacing:-.02em}
-.pb ul{margin:0 0 16px;padding-left:20px;color:var(--mu)}
-.pb li{margin-bottom:6px}
-.tg{display:flex;flex-wrap:wrap;gap:8px}
-.tg span{border:1px solid var(--ln);border-radius:999px;padding:2px 12px;font-size:.84rem;color:var(--mu)}
-.xp{display:grid;grid-template-columns:repeat(2,1fr);gap:56px}
-.xp h3.col{font-size:1.2rem;margin-bottom:22px;color:var(--ac)}
-.tl{border-left:2px solid var(--ln);margin-left:6px}
-.tl>div{position:relative;padding:0 0 30px 30px}
-.tl>div::before{content:"";position:absolute;left:-7px;top:8px;width:12px;height:12px;border-radius:50%;background:var(--ac)}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);margin-top:44px;border:1px solid var(--ln);border-radius:var(--r);background:var(--sf);overflow:hidden}
+.facts div{padding:18px 20px;border-left:1px solid var(--ln)}
+.facts div:first-child{border-left:0}
+.facts dt{color:var(--mu);margin-bottom:6px}
+.facts dd{margin:0;font:600 1.6rem/1 Fraunces,serif}
+.facts dd small{font:500 .82rem "Instrument Sans",sans-serif;color:var(--mu);display:block;margin-top:6px}
+.ph{position:relative;justify-self:end;width:100%;max-width:400px}
+.ph::before{content:"";position:absolute;inset:22px -22px -22px 22px;border-radius:28px;background:var(--ac);opacity:.9}
+.ph::after{content:"";position:absolute;width:110px;height:110px;right:-40px;top:-34px;border-radius:50%;
+  background:radial-gradient(circle,var(--hot) 2px,transparent 2.5px) 0 0/14px 14px;opacity:.55}
+.ph img{position:relative;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 20%;border-radius:28px;border:1px solid var(--ln);box-shadow:var(--shadow)}
+.chip{position:absolute;left:-34px;bottom:34px;display:flex;align-items:center;gap:12px;padding:10px 16px 10px 10px;background:var(--sf);border:1px solid var(--ln);border-radius:16px;box-shadow:var(--shadow)}
+.chip img{width:44px;height:44px;border-radius:8px;border:0;box-shadow:none;aspect-ratio:auto;object-fit:contain;background:#fff}
+.chip strong{display:block;font:600 1rem Fraunces,serif}
+.chip span{font-size:.8rem;color:var(--mu)}
+
+/* sections */
+section{padding:96px 0;border-top:1px solid var(--ln)}
+.sh{display:grid;grid-template-columns:200px 1fr;gap:32px;margin-bottom:48px;align-items:start}
+.sh .mono{color:var(--hot);padding-top:12px}
+h2{font-size:clamp(2rem,4.4vw,3.2rem);letter-spacing:-.025em}
+h2 em{font-style:italic;color:var(--ac)}
+.sub{color:var(--mu);margin:14px 0 0;max-width:60ch}
+
+/* about */
+.about{display:grid;grid-template-columns:200px 1fr .8fr;gap:32px}
+.about .txt p{margin:0 0 18px;color:var(--mu);max-width:60ch}
+.about .txt b{color:var(--tx);font-weight:600}
+.focus{background:var(--sf);border:1px solid var(--ln);border-radius:var(--r);padding:26px}
+.focus h3{font-size:1.15rem;margin-bottom:16px}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tags span{padding:5px 12px;border-radius:999px;background:var(--sf2);font-size:.86rem;font-weight:500}
+.tags span.k{background:var(--acs);color:var(--ac)}
+
+/* projects */
+.pl{display:grid;gap:28px}
+.pc{display:grid;grid-template-columns:340px 1fr;background:var(--sf);border:1px solid var(--ln);border-radius:24px;overflow:hidden;box-shadow:var(--shadow);transition:border-color .25s,transform .25s}
+.pc:hover{border-color:color-mix(in srgb,var(--ac) 50%,var(--ln));transform:translateY(-3px)}
+.pm{position:relative;background:#fff;min-height:260px;display:grid;place-items:center;border-right:1px solid var(--ln)}
+.pm img{width:100%;height:100%;object-fit:contain;position:absolute;inset:0}
+.pm.cover img{object-fit:cover}
+.pm.saji{background:#fffbeb}
+.pm .n{position:absolute;top:16px;left:16px;z-index:1;background:var(--tx);color:var(--bg);padding:4px 10px;border-radius:999px}
+.pb{padding:32px 36px 34px}
+.meta{color:var(--hot);margin-bottom:10px}
+.pb h3{font-size:1.9rem;margin-bottom:14px}
+.pb ul{margin:0 0 20px;padding:0;list-style:none;color:var(--mu)}
+.pb li{position:relative;padding-left:22px;margin-bottom:10px}
+.pb li::before{content:"";position:absolute;left:2px;top:.62em;width:8px;height:8px;border-radius:2px;background:var(--ac);transform:rotate(45deg)}
+.pb li b{color:var(--tx);font-weight:600}
+.shots{border-radius:14px;border:1px solid var(--ln);margin:0 0 20px;width:100%;height:auto}
+.pb .tags{margin-bottom:22px}
+
+/* experience */
+.xp{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+.card{background:var(--sf);border:1px solid var(--ln);border-radius:var(--r);padding:30px}
+.card h3{font-size:1.25rem;margin-bottom:24px;display:flex;align-items:center;gap:10px}
+.card h3 i{width:30px;height:30px;border-radius:9px;background:var(--acs);color:var(--ac);display:grid;place-items:center;font-style:normal}
+.card h3 i svg{width:16px;height:16px}
+.card+.card,.stack .card+.card{margin-top:28px}
+.tl{position:relative;margin-left:5px;border-left:2px solid var(--ln)}
+.tl>div{position:relative;padding:0 0 26px 26px}
 .tl>div:last-child{padding-bottom:0}
-.tl small{color:var(--mu);font-weight:500}
-.tl h4{font:700 1.15rem Sora,sans-serif;margin:4px 0 6px;letter-spacing:-.01em}
-.tl p{margin:0;color:var(--mu);max-width:56ch}
-.cred{display:grid;grid-template-columns:220px 1fr;gap:40px;align-items:center}
-.badge{background:#fff;border-radius:20px;padding:20px;display:flex;justify-content:center}
-.badge img{max-width:100%;height:auto}
-.cred h3{font-size:1.5rem;margin-bottom:10px}
-.cred p{color:var(--mu);margin:0 0 16px;max-width:56ch}
-.certs{list-style:none;margin:0;padding:0;display:grid;gap:12px}.certs li{display:flex;gap:16px;align-items:center;background:var(--sf);border:1px solid var(--ln);border-radius:14px;padding:14px 16px}.certs .aw{flex:none;width:52px;height:52px;border-radius:12px;background:#232f3e;color:#ff9900;display:grid;place-items:center;font:800 .95rem Sora,sans-serif}.certs h4{font:700 1rem Sora,sans-serif;margin:0 0 2px;letter-spacing:-.01em}.certs .ip{display:inline-block;vertical-align:2px;margin-left:6px;padding:1px 9px;border-radius:999px;border:1px solid var(--hi);color:var(--ac);font:600 .7rem Manrope,sans-serif;letter-spacing:.02em}.certs .ok{display:inline-block;vertical-align:2px;margin-left:6px;padding:1px 9px;border-radius:999px;background:var(--ac);color:#fff;font:600 .7rem Manrope,sans-serif}.certs .cm{font-size:.82rem!important;margin-top:4px!important}.certs .cl{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:6px}.certs .cl a{font-weight:600;font-size:.86rem;color:var(--ac);text-decoration:none;border-bottom:1px solid currentColor}.certs .cl a:hover{color:var(--hi)}.certs li{align-items:flex-start}.certs .bd{flex:none;width:76px;height:76px;border-radius:12px;background:#fff;display:grid;place-items:center;transition:transform .2s}.certs .bd:hover{transform:scale(1.06)}.certs .bd img{width:100%;height:100%;object-fit:contain}.certs p{margin:0;color:var(--mu);font-size:.92rem;line-height:1.45}
-.sk{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.sk>div{background:var(--sf);border:1px solid var(--ln);border-radius:16px;padding:26px}
-.sk h3{font-size:1.2rem;margin-bottom:14px}
-.sk ul{list-style:none;margin:0;padding:0;color:var(--mu)}
-.sk li{padding:7px 0;border-bottom:1px solid var(--ln)}
-.sk li:last-child{border:0}
-.ct{background:var(--sf);border:1px solid var(--ln);border-radius:28px;padding:64px 48px;text-align:center}
-.ct h2{max-width:16ch;margin:0 auto 20px}
-.ct p{color:var(--mu);max-width:46ch;margin:0 auto 32px}
-.ct .row{justify-content:center}
-footer{padding:36px 0 56px;color:var(--mu);font-size:.9rem;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-@media(max-width:800px){.ph{justify-self:center;max-width:360px}.hgrid,.about,.sk,.cred,.xp,.pc{grid-template-columns:1fr}.pv{min-height:140px}.hgrid{gap:32px;margin-top:32px}h1 .o{-webkit-text-stroke-width:1.5px}.badge{max-width:240px}.hero{padding:48px 0 40px}section{padding:64px 0}.top nav{display:none}.ct{padding:44px 24px}}
-@media(prefers-reduced-motion:reduce){.mq div{animation:none}html{scroll-behavior:auto}}
+.tl>div::before{content:"";position:absolute;left:-7px;top:7px;width:12px;height:12px;border-radius:50%;background:var(--sf);border:2.5px solid var(--ac)}
+.tl small{color:var(--mu)}
+.tl h4{font-size:1.12rem;margin:6px 0 6px}
+.tl p{margin:0;color:var(--mu);font-size:.96rem}
+
+/* certifications */
+.cg{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.cc{background:var(--sf);border:1px solid var(--ln);border-radius:22px;padding:22px;display:flex;flex-direction:column;transition:transform .25s,border-color .25s,box-shadow .25s}
+.cc:hover{transform:translateY(-4px);border-color:color-mix(in srgb,var(--ac) 50%,var(--ln));box-shadow:var(--shadow)}
+.cc .bi{display:block;background:#fff;border-radius:16px;padding:14px;margin-bottom:18px;border:1px solid var(--ln)}
+.cc .bi img{width:100%;max-width:170px;margin:0 auto;aspect-ratio:1;object-fit:contain}
+.ok{align-self:flex-start;display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:999px;background:var(--acs);color:var(--ac);font-weight:600;font-size:.76rem;margin-bottom:10px}
+.ok svg{width:12px;height:12px}
+.cc h3{font-size:1.12rem;line-height:1.25;margin-bottom:8px}
+.cc p{color:var(--mu);font-size:.92rem;margin:0 0 14px;line-height:1.5;flex:1}
+.cc .hr{display:flex;justify-content:space-between;color:var(--mu);padding:12px 0;border-top:1px dashed var(--ln);margin-bottom:12px}
+.cc .lk{display:flex;gap:16px;flex-wrap:wrap}
+.cc .lk a{font-weight:600;font-size:.88rem;color:var(--ac);text-decoration:none;border-bottom:1.5px solid color-mix(in srgb,var(--ac) 35%,transparent)}
+.cc .lk a:hover{border-color:var(--ac)}
+
+/* skills */
+.sk{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.sk .card h3{margin-bottom:18px}
+.sk ul{list-style:none;margin:0;padding:0}
+.sk li{display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid var(--ln)}
+.sk li:last-child{border:0;padding-bottom:0}
+.sk li::before{content:"";flex:none;width:6px;height:6px;border-radius:50%;background:var(--hot)}
+
+/* contact */
+.ct{position:relative;overflow:hidden;background:var(--ac);color:var(--ac-ink);border-radius:32px;padding:72px 56px;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.ct::after{content:"";position:absolute;right:-80px;bottom:-80px;width:320px;height:320px;border-radius:50%;border:56px solid color-mix(in srgb,var(--ac-ink) 10%,transparent)}
+.ct h2{color:inherit;font-size:clamp(2.2rem,4.6vw,3.4rem)}
+.ct h2 em{color:inherit;opacity:.75}
+.ct p{opacity:.85;margin:18px 0 0;max-width:44ch}
+.cl{display:grid;gap:10px;position:relative;z-index:1}
+.cl a{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px 20px;border-radius:14px;text-decoration:none;font-weight:600;
+  background:color-mix(in srgb,var(--ac-ink) 10%,transparent);border:1px solid color-mix(in srgb,var(--ac-ink) 18%,transparent);transition:background .2s,transform .2s}
+.cl a:hover{background:color-mix(in srgb,var(--ac-ink) 18%,transparent);transform:translateX(4px)}
+.cl a span{opacity:.75;font-weight:500;font-size:.9rem}
+.cl a.main{background:var(--ac-ink);color:var(--ac)}
+.cl a.main span{opacity:.8}
+footer{padding:40px 0 56px;color:var(--mu);font-size:.9rem;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+/* reveal */
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+.js .rv.in{opacity:1;transform:none}
+.hero .st{animation:up .8s cubic-bezier(.2,.7,.2,1) both}
+.hero .st:nth-child(2){animation-delay:.08s}.hero .st:nth-child(3){animation-delay:.16s}.hero .st:nth-child(4){animation-delay:.24s}.hero .st:nth-child(5){animation-delay:.32s}.hero .st:nth-child(6){animation-delay:.4s}
+@keyframes up{from{opacity:0;transform:translateY(18px)}}
+
+@media (max-width:1000px){
+  .cg{grid-template-columns:repeat(2,1fr)}
+  .about{grid-template-columns:1fr 1fr}.about .mono{grid-column:1/-1}
+  .sh{grid-template-columns:1fr;gap:8px}.sh .mono{padding-top:0}
+  .top nav{display:none}
+}
+@media (max-width:820px){
+  .hgrid,.xp,.sk,.ct,.about,.pc{grid-template-columns:1fr}
+  .ph{justify-self:center;max-width:320px;margin:16px 22px 0 0}
+  .chip{left:-6px;bottom:22px}
+  .facts{grid-template-columns:repeat(2,1fr)}
+  .facts div:nth-child(3){border-left:0}
+  .facts div:nth-child(n+3){border-top:1px solid var(--ln)}
+  .pm{min-height:220px;border-right:0;border-bottom:1px solid var(--ln)}
+  .pb{padding:26px 22px 28px}
+  .hero{padding:44px 0 64px}
+  section{padding:68px 0}
+  .ct{padding:44px 24px;border-radius:24px}
+}
+@media (max-width:520px){
+  .w{padding:0 16px}
+  .cg{grid-template-columns:1fr}
+  .facts dd{font-size:1.35rem}
+  .brand span{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .rv{opacity:1;transform:none}
+}
 </style>
+<script>
+document.documentElement.classList.add('js');
+try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}
+</script>
 </head>
 <body>
-<header class="top"><div class="w"><a href="#home" style="text-decoration:none;font:800 1.05rem Sora,sans-serif">Joshua Bong Louisa</a>
-<nav><a href="#about">About</a><a href="#work">Projects</a><a href="#experience">Experience</a><a href="#skills">Skills</a></nav>
-<a class="pill" href="#contact">Get in touch</a></div></header>
+<header class="top" id="top"><div class="w">
+  <a class="brand" href="#home"><i>J</i><span>Joshua Bong Louisa</span></a>
+  <nav aria-label="Sections"><a href="#about">About</a><a href="#work">Projects</a><a href="#experience">Experience</a><a href="#certifications">Certifications</a><a href="#skills">Skills</a></nav>
+  <div class="tools">
+    <button class="tog" id="tog" type="button" aria-label="Switch light or dark theme">
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+    </button>
+    <a class="btn p sm" href="#contact">Get in touch</a>
+  </div>
+</div></header>
 
 <main id="home">
-<div class="w hero"><div class="glow" aria-hidden="true"></div>
-<p class="kick">Information Systems · Binus University · Project Management / Business Analyst Intern Candidate</p>
-<h1><span>Joshua</span><span class="o">Bong Louisa.</span></h1>
-<div class="hgrid"><div>
-<p class="lead">Information Systems student who turns system requirements, documentation and data analysis into <b>working prototypes</b>. Strong on <b>cloud (AWS)</b>, with real hands-on experience running a business and leading teams. Looking for an internship in <b>project management or business analysis</b>.</p>
-<div class="row"><a class="pill" href="#work">See my projects</a><a class="ghost" href="cv-joshua-bong-louisa.pdf" target="_blank" rel="noopener">Download CV</a><a class="ghost" href="#contact">Say hi</a></div>
-<div class="term" aria-label="Quick facts"><div class="bar"><i></i><i></i><i></i></div><div class="bd">
-<div><span class="k">studying</span>  <span class="v">Information Systems</span></div>
-<div><span class="k">campus</span>    <span class="v">Binus Alam Sutera</span></div>
-<div><span class="k">certs</span>     <span class="v">4× AWS Academy</span></div>
-<div><span class="k">gpa</span>       <span class="v">3.34</span></div>
-<div><span class="k">path</span>      <span class="v">Accelerated, 3.5 yrs (est. 2028)</span></div>
-<div><span class="k">aiming</span>    <span class="g">PM · Business Analyst</span></div>
-</div></div></div>
-<div class="ph"><img src="photo.jpg" alt="Photo of Joshua Bong Louisa"></div></div>
-</div>
-<div class="mq" aria-hidden="true"><div><span>Project Management</span><span>AWS Cloud</span><span>Excel Power Pivot &amp; DAX</span><span>Use Case &amp; ERD</span><span>UI/UX Design</span><span>Requirement Gathering</span><span>Market Analysis</span><span>Leadership</span><span>Project Management</span><span>AWS Cloud</span><span>Excel Power Pivot &amp; DAX</span><span>Use Case &amp; ERD</span><span>UI/UX Design</span><span>Requirement Gathering</span><span>Market Analysis</span><span>Leadership</span></div></div>
+<div class="w hero"><div class="hgrid">
+  <div>
+    <div class="avail st"><b></b>Open to PM &amp; Business Analyst internships</div>
+    <h1 class="st">Joshua Bong <em>Louisa.</em></h1>
+    <p class="role st">Information Systems · Binus University <span>·</span> Alam Sutera</p>
+    <p class="lead st">I turn system requirements, documentation and data analysis into <b>working prototypes</b>. Strong on <b>cloud (AWS)</b>, with real hands-on experience running a business and leading teams.</p>
+    <div class="row st">
+      <a class="btn p" href="#work">See my projects <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn o" href="cv-joshua-bong-louisa.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>Download CV</a>
+    </div>
+    <dl class="facts st">
+      <div><dt class="mono">GPA</dt><dd>3.34<small>Information Systems</small></dd></div>
+      <div><dt class="mono">AWS</dt><dd>4×<small>Academy badges</small></dd></div>
+      <div><dt class="mono">Projects</dt><dd>3<small>From idea to prototype</small></dd></div>
+      <div><dt class="mono">Graduation</dt><dd>2028<small>Accelerated 3.5 yrs</small></dd></div>
+    </dl>
+  </div>
+  <div class="ph st">
+    <img src="photo.jpg" alt="Photo of Joshua Bong Louisa">
+    <div class="chip"><img src="badge-aws-cloud-architecting.png" alt=""><div><strong>AWS Academy</strong><span>4 badges earned</span></div></div>
+  </div>
+</div></div>
 
-<section id="about" style="border-top:0"><div class="w">
-<div class="sh"><h2>The person behind the work.</h2></div>
-<div class="about">
-<div>
-<p>I'm an <b>Information Systems</b> student at <b>Binus University, Alam Sutera</b> (GPA 3.34, estimated graduation 2028) on an accelerated 3.5-year track. My focus is turning <b>user and system requirements</b> into clear documentation, <b>business analysis</b> and <b>cloud-based</b> solutions.</p>
-<p>I've been organizing and leading since high school, from the Dewan Kerja Ambalan to MPLS events, and today I co-run a floral business and lead a five-person startup team. I work comfortably in <b>Indonesian and English</b>.</p>
-<p>Beyond class I invest in crypto spot markets using technical and macro analysis, which is what pulled me toward <b>fintech</b>.</p>
-</div>
-<div class="stats">
-<div class="stat"><strong>3.34</strong><span>GPA, Information Systems</span></div>
-<div class="stat"><strong>3.5</strong><span>year accelerated study path</span></div>
-<div class="stat"><strong>3</strong><span>projects: AllFresh, Saji, Treasure Pop</span></div>
-</div></div></div></section>
+<section id="about"><div class="w about rv">
+  <div class="mono" style="color:var(--hot);padding-top:12px">01 — About</div>
+  <div class="txt">
+    <h2 style="margin-bottom:24px">The person behind <em>the work.</em></h2>
+    <p>I'm an <b>Information Systems</b> student at <b>Binus University, Alam Sutera</b> (GPA 3.34, estimated graduation 2028) on an accelerated 3.5-year track. My focus is turning <b>user and system requirements</b> into clear documentation, <b>business analysis</b> and <b>cloud-based</b> solutions.</p>
+    <p>I've been organizing and leading since high school, from the Dewan Kerja Ambalan to MPLS events, and today I co-run a floral business and lead a five-person startup team. I work comfortably in <b>Indonesian and English</b>.</p>
+    <p>Beyond class I invest in crypto spot markets using technical and macro analysis, which is what pulled me toward <b>fintech</b>.</p>
+  </div>
+  <div class="focus">
+    <h3>What I focus on</h3>
+    <div class="tags"><span class="k">Project Management</span><span class="k">Business Analysis</span><span class="k">AWS Cloud</span><span>Requirement Gathering</span><span>Use Case &amp; ERD</span><span>Excel Power Pivot &amp; DAX</span><span>UI/UX Design</span><span>Market Analysis</span><span>Leadership</span></div>
+  </div>
+</div></section>
 
 <section id="work"><div class="w">
-<div class="sh"><h2>Selected projects.</h2><p class="sub">Each one started as a real problem, then went through requirements, documentation and a prototype.</p></div>
-<div class="pl">
-<article class="pc"><div class="pv logo" style="background:#fff"><img src="allfresh-logo.jpg" alt="AllFresh logo"></div>
-<div class="pb"><div class="meta">Campus minor project · App prototype</div><h3>AllFresh</h3>
-<ul><li>Gathered system requirements and documented <b style="color:var(--tx)">12+ use cases</b> with use case, ERD and activity diagrams.</li><li>Designed an AI recipe recommendation feature based on the ingredients a user already has, with checkout for missing items.</li><li>Designed the app screens in Figma.</li></ul>
-<div class="tg"><span>Use Case</span><span>ERD</span><span>Activity Diagram</span><span>UI/UX</span><span>AI</span></div><div class="row" style="margin-top:18px"><a class="ghost" href="https://docs.google.com/document/d/1v619UqSu_OhTxtGHMF7ysJorBPiBGBEiVP6fnI3q1cI/edit?usp=sharing" target="_blank" rel="noopener">Read documentation</a><a class="ghost" href="https://www.figma.com/design/TqcmkivYKY0wuFW2Uls1K5/Untitled?node-id=0-1&amp;t=5bgp4MK5XV7DmSv2-1" target="_blank" rel="noopener">Open Figma design</a></div></div></article>
-<article class="pc"><div class="pv logo"><img src="saji-logo.jpg" alt="Saji logo: Surplus and Affordable Just-In-time"></div>
-<div class="pb"><div class="meta">Venture Creation course · Co-Founder &amp; CEO, team of 5</div><h3>Saji</h3>
-<ul><li>A digital platform that connects consumers with restaurants, cafes, bakeries and supermarkets that have <b style="color:var(--tx)">surplus food</b> still fit to eat, at lower prices, to help reduce food waste.</li><li>Developed the <b style="color:var(--tx)">Business Model Canvas</b> and a robust design analysis, then built a Figma prototype covering allergy preferences, search and filters, checkout, payment, order tracking and a personal impact page.</li><li>Ran user interviews and a feedback grid, and implemented <b style="color:var(--tx)">5 improvements</b> from the feedback, including allergy-aware catalog, allergen alerts and merchant ratings.</li></ul>
-<img class="shots" src="saji-screens.jpg" alt="Saji app prototype screens: allergy check, home, catalog and Kenapa SAJI page" loading="lazy"><div class="tg"><span>Business Model Canvas</span><span>Figma prototype</span><span>User interviews</span><span>Leadership</span></div>
-<div class="row" style="margin-top:18px"><a class="ghost" href="https://www.figma.com/proto/mN5W9XFg8yJa9j6w8yaWQO/SAJI?node-id=41-38&amp;t=QUMOFMoK4x8hDKq4-1" target="_blank" rel="noopener">Open prototype</a><a class="ghost" href="saji-venture-creation.pdf" target="_blank" rel="noopener">View full deck (PDF)</a><a class="ghost" href="https://youtu.be/egwcyOJWJws" target="_blank" rel="noopener">Interview video</a></div></div></article>
-<article class="pc"><div class="pv"><img class="cov" src="treasure-pop.jpg" alt="Treasure Pop mystery jewelry jars in three sizes: large 350ml, medium 200ml, small 100ml" style="object-position:50% 50%"></div>
-<div class="pb"><div class="meta">Group project · Team of 5</div><h3>Treasure Pop</h3>
-<ul><li>A <b style="color:var(--tx)">mystery jewelry jar</b> brand that sells curated vintage and secondhand jewelry in three jar sizes (350, 200 and 100 ml), each with one extra-special piece, supporting <b style="color:var(--tx)">SDG 12 and 13</b>.</li><li>Built the Value Proposition Canvas, STP, user persona, empathy map, perceptual map, mind map, 5W+1H, cost structure and revenue streams.</li><li>Interviewed potential customers, summarized the results in a feedback grid, and used the input on full-blind packaging and a sub-Rp100k price point to refine the product.</li></ul>
-<div class="tg"><span>Value Proposition Canvas</span><span>STP</span><span>User persona</span><span>User interviews</span><span>Sustainability</span></div>
-<div class="row" style="margin-top:18px"><a class="ghost" href="treasure-pop-deck.pdf" target="_blank" rel="noopener">View full deck (PDF)</a><a class="ghost" href="treasure-pop-infografis.pdf" target="_blank" rel="noopener">Infographic (PDF)</a></div></div></article>
-</div></div></section>
+  <div class="sh rv"><div class="mono">02 — Projects</div><div><h2>Selected <em>projects.</em></h2><p class="sub">Each one started as a real problem, then went through requirements, documentation and a prototype.</p></div></div>
+  <div class="pl">
+    <article class="pc rv">
+      <div class="pm"><span class="n mono">01</span><img src="allfresh-logo.jpg" alt="AllFresh logo" style="padding:32px"></div>
+      <div class="pb">
+        <div class="meta mono">Campus minor project · App prototype</div>
+        <h3>AllFresh</h3>
+        <ul><li>Gathered system requirements and documented <b>12+ use cases</b> with use case, ERD and activity diagrams.</li><li>Designed an AI recipe recommendation feature based on the ingredients a user already has, with checkout for missing items.</li><li>Designed the app screens in Figma.</li></ul>
+        <div class="tags"><span>Use Case</span><span>ERD</span><span>Activity Diagram</span><span>UI/UX</span><span>AI</span></div>
+        <div class="row"><a class="btn o sm" href="https://docs.google.com/document/d/1v619UqSu_OhTxtGHMF7ysJorBPiBGBEiVP6fnI3q1cI/edit?usp=sharing" target="_blank" rel="noopener">Read documentation ↗</a><a class="btn o sm" href="https://www.figma.com/design/TqcmkivYKY0wuFW2Uls1K5/Untitled?node-id=0-1&amp;t=5bgp4MK5XV7DmSv2-1" target="_blank" rel="noopener">Open Figma design ↗</a></div>
+      </div>
+    </article>
+    <article class="pc rv">
+      <div class="pm saji"><span class="n mono">02</span><img src="saji-logo.jpg" alt="Saji logo: Surplus and Affordable Just-In-time"></div>
+      <div class="pb">
+        <div class="meta mono">Venture Creation · Co-Founder &amp; CEO · Team of 5</div>
+        <h3>Saji</h3>
+        <ul><li>A digital platform that connects consumers with restaurants, cafes, bakeries and supermarkets that have <b>surplus food</b> still fit to eat, at lower prices, to help reduce food waste.</li><li>Developed the <b>Business Model Canvas</b> and a robust design analysis, then built a Figma prototype covering allergy preferences, search and filters, checkout, payment, order tracking and a personal impact page.</li><li>Ran user interviews and a feedback grid, and implemented <b>5 improvements</b> from the feedback, including allergy-aware catalog, allergen alerts and merchant ratings.</li></ul>
+        <img class="shots" src="saji-screens.jpg" alt="Saji app prototype screens: allergy check, home, catalog and Kenapa SAJI page" loading="lazy">
+        <div class="tags"><span>Business Model Canvas</span><span>Figma prototype</span><span>User interviews</span><span>Leadership</span></div>
+        <div class="row"><a class="btn o sm" href="https://www.figma.com/proto/mN5W9XFg8yJa9j6w8yaWQO/SAJI?node-id=41-38&amp;t=QUMOFMoK4x8hDKq4-1" target="_blank" rel="noopener">Open prototype ↗</a><a class="btn o sm" href="saji-venture-creation.pdf" target="_blank" rel="noopener">Full deck (PDF)</a><a class="btn o sm" href="https://youtu.be/egwcyOJWJws" target="_blank" rel="noopener">Interview video ↗</a></div>
+      </div>
+    </article>
+    <article class="pc rv">
+      <div class="pm cover"><span class="n mono">03</span><img src="treasure-pop.jpg" alt="Treasure Pop mystery jewelry jars in three sizes: large 350ml, medium 200ml, small 100ml"></div>
+      <div class="pb">
+        <div class="meta mono">Group project · Team of 5</div>
+        <h3>Treasure Pop</h3>
+        <ul><li>A <b>mystery jewelry jar</b> brand that sells curated vintage and secondhand jewelry in three jar sizes (350, 200 and 100 ml), each with one extra-special piece, supporting <b>SDG 12 and 13</b>.</li><li>Built the Value Proposition Canvas, STP, user persona, empathy map, perceptual map, mind map, 5W+1H, cost structure and revenue streams.</li><li>Interviewed potential customers, summarized the results in a feedback grid, and used the input on full-blind packaging and a sub-Rp100k price point to refine the product.</li></ul>
+        <div class="tags"><span>Value Proposition Canvas</span><span>STP</span><span>User persona</span><span>User interviews</span><span>Sustainability</span></div>
+        <div class="row"><a class="btn o sm" href="treasure-pop-deck.pdf" target="_blank" rel="noopener">Full deck (PDF)</a><a class="btn o sm" href="treasure-pop-infografis.pdf" target="_blank" rel="noopener">Infographic (PDF)</a></div>
+      </div>
+    </article>
+  </div>
+</div></section>
 
 <section id="experience"><div class="w">
-<div class="sh"><h2>Experience and education.</h2><p class="sub">From organizing school events to running a business and a startup team.</p></div>
-<div class="xp">
-<div><h3 class="col">Work and ventures</h3><div class="tl">
-<div><small>2024 – now</small><h4>Co-Founder, Olivia Floristry</h4><p>Floral shop in Gading Serpong. Handle operations, stock and finances with my partner, and fulfil 20–30 orders a month in peak season.</p></div>
-<div><small>2024 – now</small><h4>Crypto Trader / Investor (Spot)</h4><p>Technical and macro analysis for long-term investment decisions, with disciplined risk management and portfolio tracking.</p></div>
-</div>
-<h3 class="col" style="margin-top:40px">Organizations</h3><div class="tl">
-<div><small>2022 – 2023</small><h4>Event Lead, Dewan Kerja Ambalan, SMAS Tarakanita</h4><p>Led the program flow for scouting events.</p></div>
-<div><small>2022</small><h4>MPLS Organizer, SMAS Tarakanita</h4><p>Part of the committee for the new-student orientation.</p></div>
-<div><small>2021 – 2022</small><h4>Member, Dewan Kerja Ambalan, SMAS Tarakanita</h4><p>First leadership role in the school scouting council.</p></div>
-</div></div>
-<div><h3 class="col">Education</h3><div class="tl">
-<div><small>2024 – now</small><h4>Binus University, Alam Sutera</h4><p>S1 Information Systems, accelerated 3.5-year track using short semesters. GPA 3.34, estimated graduation 2028.</p></div>
-<div><small>2021 – 2024</small><h4>SMAS Tarakanita, Gading Serpong</h4><p>Senior high school.</p></div>
-</div>
-<h3 class="col" style="margin-top:40px">Certifications</h3><ul class="certs"><li><a class="bd" href="https://www.credly.com/go/0SxMTutl" target="_blank" rel="noopener"><img src="badge-aws-cloud-foundations.png" alt="AWS Academy Cloud Foundations Trained badge" loading="lazy"></a><div><h4>AWS Academy Cloud Foundations <span class="ok">Earned</span></h4><p>Core cloud concepts and AWS services, the base of my cloud focus.</p><p class="cm">20 hours · Jun 2026</p><div class="cl"><a href="https://www.credly.com/go/0SxMTutl" target="_blank" rel="noopener">Verify on Credly ↗</a><a href="aws-cloud-foundations-certificate.pdf" target="_blank" rel="noopener">Certificate (PDF)</a></div></div></li><li><a class="bd" href="https://www.credly.com/go/QPXJFzMB" target="_blank" rel="noopener"><img src="badge-aws-cloud-architecting.png" alt="AWS Academy Cloud Architecting Trained badge" loading="lazy"></a><div><h4>AWS Academy Cloud Architecting <span class="ok">Earned</span></h4><p>Designing secure, scalable and highly available architectures on AWS.</p><p class="cm">60 hours · Oct 2026</p><div class="cl"><a href="https://www.credly.com/go/QPXJFzMB" target="_blank" rel="noopener">Verify on Credly ↗</a><a href="aws-cloud-architecting-certificate.pdf" target="_blank" rel="noopener">Certificate (PDF)</a></div></div></li><li><a class="bd" href="https://www.credly.com/go/pNL94J2o" target="_blank" rel="noopener"><img src="badge-aws-data-engineering.png" alt="AWS Academy Data Engineering Trained badge" loading="lazy"></a><div><h4>AWS Academy Data Engineering <span class="ok">Earned</span></h4><p>Building data pipelines, ingestion and storage on AWS.</p><p class="cm">40 hours · Nov 2026</p><div class="cl"><a href="https://www.credly.com/go/pNL94J2o" target="_blank" rel="noopener">Verify on Credly ↗</a><a href="aws-data-engineering-certificate.pdf" target="_blank" rel="noopener">Certificate (PDF)</a></div></div></li><li><a class="bd" href="https://www.credly.com/go/nJ6V1WW6" target="_blank" rel="noopener"><img src="badge-aws-ml-foundations.png" alt="AWS Academy Machine Learning Foundations Trained badge" loading="lazy"></a><div><h4>AWS Academy Machine Learning Foundations <span class="ok">Earned</span></h4><p>Core ML concepts and the AWS services used to build ML solutions.</p><p class="cm">20 hours · Nov 2026</p><div class="cl"><a href="https://www.credly.com/go/nJ6V1WW6" target="_blank" rel="noopener">Verify on Credly ↗</a><a href="aws-ml-foundations-certificate.pdf" target="_blank" rel="noopener">Certificate (PDF)</a></div></div></li></ul>
-</div></div></div></section>
+  <div class="sh rv"><div class="mono">03 — Experience</div><div><h2>Experience &amp; <em>education.</em></h2><p class="sub">From organizing school events to running a business and a startup team.</p></div></div>
+  <div class="xp">
+    <div class="stack">
+      <div class="card rv"><h3><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></i>Work &amp; ventures</h3><div class="tl">
+        <div><small class="mono">2024 – now</small><h4>Co-Founder, Olivia Floristry</h4><p>Floral shop in Gading Serpong. Handle operations, stock and finances with my partner, and fulfil 20–30 orders a month in peak season.</p></div>
+        <div><small class="mono">2024 – now</small><h4>Crypto Trader / Investor (Spot)</h4><p>Technical and macro analysis for long-term investment decisions, with disciplined risk management and portfolio tracking.</p></div>
+      </div></div>
+      <div class="card rv"><h3><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.5a3.5 3.5 0 0 1 0 7M21.5 20a6.5 6.5 0 0 0-4-6"/></svg></i>Organizations</h3><div class="tl">
+        <div><small class="mono">2022 – 2023</small><h4>Event Lead, Dewan Kerja Ambalan</h4><p>SMAS Tarakanita. Led the program flow for scouting events.</p></div>
+        <div><small class="mono">2022</small><h4>MPLS Organizer</h4><p>SMAS Tarakanita. Part of the committee for the new-student orientation.</p></div>
+        <div><small class="mono">2021 – 2022</small><h4>Member, Dewan Kerja Ambalan</h4><p>SMAS Tarakanita. First leadership role in the school scouting council.</p></div>
+      </div></div>
+    </div>
+    <div class="card rv" style="align-self:start"><h3><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2.5 9 2.5 12 0v-5"/></svg></i>Education</h3><div class="tl">
+      <div><small class="mono">2024 – now</small><h4>Binus University, Alam Sutera</h4><p>S1 Information Systems, accelerated 3.5-year track using short semesters. GPA 3.34, estimated graduation 2028.</p></div>
+      <div><small class="mono">2021 – 2024</small><h4>SMAS Tarakanita, Gading Serpong</h4><p>Senior high school.</p></div>
+    </div></div>
+  </div>
+</div></section>
+
+<section id="certifications"><div class="w">
+  <div class="sh rv"><div class="mono">04 — Certifications</div><div><h2>AWS Academy <em>credentials.</em></h2><p class="sub">Four AWS Academy training badges, each verifiable on Credly. Click a badge to verify it.</p></div></div>
+  <div class="cg">
+    <article class="cc rv"><a class="bi" href="https://www.credly.com/go/0SxMTutl" target="_blank" rel="noopener" aria-label="Verify Cloud Foundations badge on Credly"><img src="badge-aws-cloud-foundations.png" alt="AWS Academy Cloud Foundations Trained badge" loading="lazy"></a>
+      <span class="ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>Earned</span>
+      <h3>Cloud Foundations</h3><p>Core cloud concepts and AWS services, the base of my cloud focus.</p>
+      <div class="hr mono"><span>20 hours</span><span>Jun 2026</span></div>
+      <div class="lk"><a href="https://www.credly.com/go/0SxMTutl" target="_blank" rel="noopener">Verify ↗</a><a href="aws-cloud-foundations-certificate.pdf" target="_blank" rel="noopener">Certificate</a></div></article>
+    <article class="cc rv"><a class="bi" href="https://www.credly.com/go/QPXJFzMB" target="_blank" rel="noopener" aria-label="Verify Cloud Architecting badge on Credly"><img src="badge-aws-cloud-architecting.png" alt="AWS Academy Cloud Architecting Trained badge" loading="lazy"></a>
+      <span class="ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>Earned</span>
+      <h3>Cloud Architecting</h3><p>Designing secure, scalable and highly available architectures on AWS.</p>
+      <div class="hr mono"><span>60 hours</span><span>Oct 2026</span></div>
+      <div class="lk"><a href="https://www.credly.com/go/QPXJFzMB" target="_blank" rel="noopener">Verify ↗</a><a href="aws-cloud-architecting-certificate.pdf" target="_blank" rel="noopener">Certificate</a></div></article>
+    <article class="cc rv"><a class="bi" href="https://www.credly.com/go/pNL94J2o" target="_blank" rel="noopener" aria-label="Verify Data Engineering badge on Credly"><img src="badge-aws-data-engineering.png" alt="AWS Academy Data Engineering Trained badge" loading="lazy"></a>
+      <span class="ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>Earned</span>
+      <h3>Data Engineering</h3><p>Building data pipelines, ingestion and storage on AWS.</p>
+      <div class="hr mono"><span>40 hours</span><span>Nov 2026</span></div>
+      <div class="lk"><a href="https://www.credly.com/go/pNL94J2o" target="_blank" rel="noopener">Verify ↗</a><a href="aws-data-engineering-certificate.pdf" target="_blank" rel="noopener">Certificate</a></div></article>
+    <article class="cc rv"><a class="bi" href="https://www.credly.com/go/nJ6V1WW6" target="_blank" rel="noopener" aria-label="Verify Machine Learning Foundations badge on Credly"><img src="badge-aws-ml-foundations.png" alt="AWS Academy Machine Learning Foundations Trained badge" loading="lazy"></a>
+      <span class="ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>Earned</span>
+      <h3>Machine Learning Foundations</h3><p>Core ML concepts and the AWS services used to build ML solutions.</p>
+      <div class="hr mono"><span>20 hours</span><span>Nov 2026</span></div>
+      <div class="lk"><a href="https://www.credly.com/go/nJ6V1WW6" target="_blank" rel="noopener">Verify ↗</a><a href="aws-ml-foundations-certificate.pdf" target="_blank" rel="noopener">Certificate</a></div></article>
+  </div>
+</div></section>
 
 <section id="skills"><div class="w">
-<div class="sh"><h2>Tools and talents.</h2></div>
-<div class="sk">
-<div><h3>Technical</h3><ul><li>AWS cloud computing</li><li>Excel: Power Pivot, DAX, regression</li><li>UI/UX design</li><li>HTML, CSS, JavaScript</li></ul></div>
-<div><h3>Analysis and documentation</h3><ul><li>Use case, ERD, activity diagrams</li><li>Requirement gathering</li><li>Market analysis</li><li>Project management</li></ul></div>
-<div><h3>Soft skills</h3><ul><li>Public speaking</li><li>Leadership</li><li>Adaptable</li><li>Indonesian and English (active)</li></ul></div>
-</div></div></section>
+  <div class="sh rv"><div class="mono">05 — Skills</div><div><h2>Tools &amp; <em>talents.</em></h2></div></div>
+  <div class="sk">
+    <div class="card rv"><h3>Technical</h3><ul><li>AWS cloud computing</li><li>Excel: Power Pivot, DAX, regression</li><li>UI/UX design</li><li>HTML, CSS, JavaScript</li></ul></div>
+    <div class="card rv"><h3>Analysis &amp; documentation</h3><ul><li>Use case, ERD, activity diagrams</li><li>Requirement gathering</li><li>Market analysis</li><li>Project management</li></ul></div>
+    <div class="card rv"><h3>Soft skills</h3><ul><li>Public speaking</li><li>Leadership</li><li>Adaptable</li><li>Indonesian and English (active)</li></ul></div>
+  </div>
+</div></section>
 
-<section id="contact" style="padding-top:32px"><div class="w"><div class="ct">
-<h2>Let's build something useful.</h2>
-<p>Open to internships in project management and business analysis, plus conversations about cloud, data and product work.</p>
-<div class="row"><a class="pill" href="mailto:joshuabonglouisa@gmail.com">joshuabonglouisa@gmail.com</a><a class="pill" href="https://wa.me/6281284920039" target="_blank" rel="noopener">WhatsApp · 0812 8492 0039</a></div>
-<div class="row" style="margin-top:12px"><a class="ghost" href="https://www.linkedin.com/in/joshua-bong-louisa-5569b9325" target="_blank" rel="noopener">LinkedIn</a><a class="ghost" href="https://line.me/ti/p/~joshua.b.l" target="_blank" rel="noopener">LINE · joshua.b.l</a><a class="ghost" href="https://www.instagram.com/joshuabl_" target="_blank" rel="noopener">Instagram · @joshuabl_</a></div>
+<section id="contact" style="border-top:0;padding-top:24px"><div class="w"><div class="ct rv">
+  <div><div class="mono" style="opacity:.75;margin-bottom:16px">06 — Contact</div><h2>Let's build something <em>useful.</em></h2><p>Open to internships in project management and business analysis, plus conversations about cloud, data and product work.</p></div>
+  <div class="cl">
+    <a class="main" href="mailto:joshuabonglouisa@gmail.com">Email <span>joshuabonglouisa@gmail.com</span></a>
+    <a href="https://wa.me/6281284920039" target="_blank" rel="noopener">WhatsApp <span>0812 8492 0039</span></a>
+    <a href="https://www.linkedin.com/in/joshua-bong-louisa-5569b9325" target="_blank" rel="noopener">LinkedIn <span>Joshua Bong Louisa ↗</span></a>
+    <a href="https://line.me/ti/p/~joshua.b.l" target="_blank" rel="noopener">LINE <span>joshua.b.l</span></a>
+    <a href="https://www.instagram.com/joshuabl_" target="_blank" rel="noopener">Instagram <span>@joshuabl_</span></a>
+  </div>
 </div></div></section>
 </main>
 <div class="w"><footer><span>© 2026 Joshua Bong Louisa</span><span>Information Systems · Binus University Alam Sutera</span></footer></div>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  document.getElementById('tog').addEventListener('click',function(){
+    var cur=root.dataset.theme||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
+    var next=cur==='dark'?'light':'dark';root.dataset.theme=next;
+    try{localStorage.setItem('theme',next)}catch(e){}
+  });
+  var hd=document.getElementById('top');
+  addEventListener('scroll',function(){hd.classList.toggle('sc',scrollY>8)},{passive:true});
+  var els=document.querySelectorAll('.rv');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px',threshold:.08});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
 </body>
 </html>

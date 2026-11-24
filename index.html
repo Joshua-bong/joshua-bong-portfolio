@@ -79,7 +79,7 @@ header.top.sc{border-bottom-color:var(--ln)}
 .row{display:flex;flex-wrap:wrap;gap:12px}
 
 /* hero */
-.hero{padding:72px 0 80px;position:relative;isolation:isolate}
+.hero{padding:72px 24px 80px;position:relative;isolation:isolate}
 
 /* animated sky */
 .sky{position:absolute;z-index:-1;left:50%;width:100vw;transform:translateX(-50%);top:-68px;bottom:0;overflow:hidden;pointer-events:none;
@@ -216,30 +216,45 @@ h2 em{font-style:italic;color:var(--ac)}
 
 /* projects */
 .pl{display:grid;gap:28px}
-.pc{display:grid;grid-template-columns:340px 1fr;background:var(--sf);border:1px solid var(--ln);border-radius:24px;overflow:hidden;box-shadow:var(--shadow);transition:border-color .25s,transform .25s}
+.pc{display:grid;grid-template-columns:400px 1fr;background:var(--sf);border:1px solid var(--ln);border-radius:24px;overflow:hidden;box-shadow:var(--shadow);transition:border-color .25s,transform .25s}
 .pc:hover{border-color:color-mix(in srgb,var(--ac) 50%,var(--ln));transform:translateY(-3px)}
 .pm{position:relative;background:#fff;min-height:260px;display:grid;place-items:center;border-right:1px solid var(--ln)}
 .pm img{width:100%;height:100%;object-fit:contain;position:absolute;inset:0}
-.pm.cover img{object-fit:cover}
-.pm.saji{background:#fffbeb}
+.pm.logo img{position:static;width:min(62%,230px);height:auto}
+.pm.saji{background:#fffaec;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:22px 18px}
+.pm.saji img{position:static;width:min(50%,176px);height:auto}
+.pm.saji a{display:block;width:100%;border-radius:12px;overflow:hidden;border:1px solid #e6dcc2;transition:transform .25s}
+.pm.saji a:hover{transform:scale(1.03)}
+.pm.saji a img{width:100%}
+.pm.cover{overflow:hidden;background:#2b1a10}
+.pm.cover::before{content:"";position:absolute;inset:-30px;background:url(treasure-pop.jpg) center/cover;filter:blur(18px) brightness(.6)}
+.pm.cover img{position:relative;inset:auto;height:auto;aspect-ratio:884/462;object-fit:cover;object-position:50% 100%;
+  -webkit-mask-image:linear-gradient(transparent,#000 9%,#000 94%,transparent);mask-image:linear-gradient(transparent,#000 9%,#000 94%,transparent)}
 .pm .n{position:absolute;top:16px;left:16px;z-index:1;background:var(--tx);color:var(--bg);padding:4px 10px;border-radius:999px}
-.pb{padding:32px 36px 34px}
+.pb{padding:32px 36px 34px;display:flex;flex-direction:column}
 .meta{color:var(--hot);margin-bottom:10px}
 .pb h3{font-size:1.9rem;margin-bottom:14px}
 .pb ul{margin:0 0 20px;padding:0;list-style:none;color:var(--mu)}
 .pb li{position:relative;padding-left:22px;margin-bottom:10px}
 .pb li::before{content:"";position:absolute;left:2px;top:.62em;width:8px;height:8px;border-radius:2px;background:var(--ac);transform:rotate(45deg)}
 .pb li b{color:var(--tx);font-weight:600}
-.shots{border-radius:14px;border:1px solid var(--ln);margin:0 0 20px;width:100%;height:auto}
-.pb .tags{margin-bottom:22px}
+.pb .tags{margin:auto 0 18px}
 
 /* experience */
-.xp{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+.xp{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.xp .card{position:relative;overflow:hidden;display:flex;flex-direction:column;transition:transform .25s,border-color .25s,box-shadow .25s}
+.xp .card::before{content:"";position:absolute;inset:0 0 auto;height:3px;background:linear-gradient(to right,var(--ac),color-mix(in srgb,var(--ac) 15%,transparent))}
+.xp .card:hover{border-color:color-mix(in srgb,var(--ac) 50%,var(--ln));box-shadow:var(--shadow)}
+.xp .tl small{display:inline-block;padding:1px 10px;border-radius:999px;background:var(--sf2)}
+.edu{margin:auto 0 0;padding-top:20px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.edu div{background:var(--acs);border-radius:12px;padding:12px 8px;text-align:center}
+.edu dt{color:var(--mu);font-size:.78rem;line-height:1.3}
+.edu dd{margin:0 0 5px;font:600 1.3rem/1 Fraunces,serif;color:var(--ac)}
+.edu>div{display:flex;flex-direction:column-reverse;justify-content:flex-end}
 .card{background:var(--sf);border:1px solid var(--ln);border-radius:var(--r);padding:30px}
 .card h3{font-size:1.25rem;margin-bottom:24px;display:flex;align-items:center;gap:10px}
 .card h3 i{width:30px;height:30px;border-radius:9px;background:var(--acs);color:var(--ac);display:grid;place-items:center;font-style:normal}
 .card h3 i svg{width:16px;height:16px}
-.card+.card,.stack .card+.card{margin-top:28px}
 .tl{position:relative;margin-left:5px;border-left:2px solid var(--ln)}
 .tl>div{position:relative;padding:0 0 26px 26px}
 .tl>div:last-child{padding-bottom:0}
@@ -266,9 +281,10 @@ h2 em{font-style:italic;color:var(--ac)}
 /* skills */
 .sk{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .sk .card h3{margin-bottom:18px}
-.sk ul{list-style:none;margin:0;padding:0}
+.sk .card{display:flex;flex-direction:column}
+.sk ul{list-style:none;margin:0;padding:0;flex:1;display:grid;grid-auto-rows:1fr}
 .sk li{display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid var(--ln)}
-.sk li:last-child{border:0;padding-bottom:0}
+.sk li:last-child{border:0}
 .sk li::before{content:"";flex:none;width:6px;height:6px;border-radius:50%;background:var(--hot)}
 
 /* contact */
@@ -293,7 +309,73 @@ footer{padding:40px 0 56px;color:var(--mu);font-size:.9rem;display:flex;justify-
 .hero .st:nth-child(2){animation-delay:.08s}.hero .st:nth-child(3){animation-delay:.16s}.hero .st:nth-child(4){animation-delay:.24s}.hero .st:nth-child(5){animation-delay:.32s}.hero .st:nth-child(6){animation-delay:.4s}
 @keyframes up{from{opacity:0;transform:translateY(18px)}}
 
+/* desktop: every section fits in one screen below the 68px header */
+@media (min-width:1001px){
+  html{scroll-padding-top:67px}
+  .w{max-width:1240px}
+  .hero,section{min-height:min(calc(100svh - 68px),860px);display:flex;flex-direction:column;justify-content:center}
+  section>.w{width:100%}
+  section{padding:clamp(20px,4.2svh,64px) 0}
+  .sh{margin-bottom:clamp(18px,3.4svh,40px)}
+  .sh .mono{padding-top:10px}
+  .sub{margin-top:8px;max-width:none}
+  .sk .card{padding-bottom:18px}
+  .sk li{padding:clamp(9px,2svh,18px) 0}
+  h2{font-size:clamp(2rem,min(4.4vw,6svh),3.2rem)}
+
+  .hero{padding-top:clamp(14px,3svh,40px);padding-bottom:clamp(24px,4.6svh,56px)}
+  .hgrid{grid-template-columns:1fr auto;gap:72px}
+  h1 em{display:block}
+  .avail{margin-bottom:clamp(10px,2svh,24px)}
+  h1{font-size:clamp(2.9rem,min(7.4vw,11.6svh),5.8rem)}
+  .role{margin:clamp(10px,2svh,22px) 0 clamp(6px,1.2svh,14px)}
+  .lead{margin-bottom:clamp(14px,2.8svh,32px)}
+  .facts{margin-top:clamp(16px,3.4svh,44px)}
+  .facts div{padding:clamp(11px,1.9svh,18px) 14px}
+  .facts dd small{font-size:.78rem}
+  .ph{width:min(440px,31vw,calc((100svh - 190px)*.8));max-width:none}
+  .sky-sun,.sky-moon{right:auto;left:calc(50vw + 10px)}
+  .sky-moon{left:calc(50vw + 40px)}
+
+  .about .txt p{margin-bottom:14px}
+  .about h2{margin-bottom:16px!important}
+  .focus .fb{padding:clamp(14px,2.4svh,24px) 24px}
+  .focus h3{margin-bottom:12px}
+  .qi{gap:clamp(8px,1.5svh,14px)}
+
+  .pl{grid-auto-rows:1fr;gap:22px}
+  .pb{padding:26px 34px}
+  .pb h3{margin-bottom:10px}
+  .pb ul{margin-bottom:14px}
+  .pb li{margin-bottom:7px;font-size:.98rem;line-height:1.55}
+
+  .xp .card{padding:clamp(18px,3svh,28px) 24px}
+  .xp .card h3{margin-bottom:clamp(12px,2.2svh,22px)}
+  .tl>div{padding-bottom:clamp(12px,2.2svh,24px);padding-left:22px}
+  .tl h4{font-size:1.06rem;margin:5px 0 3px}
+  .tl p{font-size:.92rem;line-height:1.5}
+
+  .cc{padding:18px 20px}
+  .cc .bi{padding:10px;margin-bottom:14px}
+  .cc .bi img{width:auto;height:clamp(96px,18.5svh,170px);max-width:100%}
+  .cc h3{font-size:1rem;letter-spacing:-.025em;margin-bottom:5px}
+  .cc p{margin-bottom:10px}
+  .cc .hr{padding:9px 0;margin-bottom:6px}
+
+  .ct{padding:clamp(32px,6svh,72px) 56px}
+}
+@media (min-width:1001px) and (max-height:680px){
+  .lead{font-size:1rem;line-height:1.5}
+  .facts dd{font-size:1.35rem}
+  .facts dt{margin-bottom:2px}
+  .about .txt p{font-size:.96rem;line-height:1.5;margin-bottom:10px}
+  .qi dd,.focus .tags span{font-size:.86rem}
+  .tl p{font-size:.88rem;line-height:1.42}
+}
+
 @media (max-width:1000px){
+  .xp{grid-template-columns:1fr}
+  .pc{grid-template-columns:300px 1fr}
   .cg{grid-template-columns:repeat(2,1fr)}
   .about{grid-template-columns:1fr 1fr}.about .mono{grid-column:1/-1}
   .sh{grid-template-columns:1fr;gap:8px}.sh .mono{padding-top:0}
@@ -319,12 +401,12 @@ footer{padding:40px 0 56px;color:var(--mu);font-size:.9rem;display:flex;justify-
   .facts div:nth-child(n+3){border-top:1px solid var(--ln)}
   .pm{min-height:220px;border-right:0;border-bottom:1px solid var(--ln)}
   .pb{padding:26px 22px 28px}
-  .hero{padding:44px 0 64px}
+  .hero{padding:44px 24px 64px}
   section{padding:68px 0}
   .ct{padding:44px 24px;border-radius:24px}
 }
 @media (max-width:520px){
-  .w{padding:0 16px}
+  .w{padding-left:16px;padding-right:16px}
   .cg{grid-template-columns:1fr}
   .facts dd{font-size:1.35rem}
   .brand span{display:none}
@@ -381,7 +463,7 @@ try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.th
 </div>
 <div class="hgrid">
   <div>
-    <div class="avail st"><b></b>Open to PM &amp; Business Analyst internships</div>
+    <div class="avail st"><b></b>Open to Project Manager internships</div>
     <h1 class="st">Joshua Bong <em>Louisa.</em></h1>
     <p class="role st">Information Systems · Binus University <span>·</span> Alam Sutera</p>
     <p class="lead st">I turn system requirements, documentation and data analysis into <b>working prototypes</b>. Strong on <b>cloud (AWS)</b>, with real hands-on experience running a business and leading teams.</p>
@@ -431,7 +513,7 @@ try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.th
   <div class="sh rv"><div class="mono">02 — Projects</div><div><h2>Selected <em>projects.</em></h2><p class="sub">Each one started as a real problem, then went through requirements, documentation and a prototype.</p></div></div>
   <div class="pl">
     <article class="pc rv">
-      <div class="pm"><span class="n mono">01</span><img src="allfresh-logo.jpg" alt="AllFresh logo" style="padding:32px"></div>
+      <div class="pm logo"><span class="n mono">01</span><img src="allfresh-logo.jpg" alt="AllFresh logo"></div>
       <div class="pb">
         <div class="meta mono">Campus minor project · App prototype</div>
         <h3>AllFresh</h3>
@@ -441,12 +523,11 @@ try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.th
       </div>
     </article>
     <article class="pc rv">
-      <div class="pm saji"><span class="n mono">02</span><img src="saji-logo.jpg" alt="Saji logo: Surplus and Affordable Just-In-time"></div>
+      <div class="pm saji"><span class="n mono">02</span><img src="saji-logo.jpg" alt="Saji logo: Surplus and Affordable Just-In-time"><a href="saji-screens.jpg" target="_blank" rel="noopener" aria-label="Open Saji prototype screens full size"><img src="saji-screens.jpg" alt="Saji app prototype screens: allergy check, home, catalog and Kenapa SAJI page"></a></div>
       <div class="pb">
         <div class="meta mono">Venture Creation · Co-Founder &amp; CEO · Team of 5</div>
         <h3>Saji</h3>
         <ul><li>A digital platform that connects consumers with restaurants, cafes, bakeries and supermarkets that have <b>surplus food</b> still fit to eat, at lower prices, to help reduce food waste.</li><li>Developed the <b>Business Model Canvas</b> and a robust design analysis, then built a Figma prototype covering allergy preferences, search and filters, checkout, payment, order tracking and a personal impact page.</li><li>Ran user interviews and a feedback grid, and implemented <b>5 improvements</b> from the feedback, including allergy-aware catalog, allergen alerts and merchant ratings.</li></ul>
-        <img class="shots" src="saji-screens.jpg" alt="Saji app prototype screens: allergy check, home, catalog and Kenapa SAJI page" loading="lazy">
         <div class="tags"><span>Business Model Canvas</span><span>Figma prototype</span><span>User interviews</span><span>Leadership</span></div>
         <div class="row"><a class="btn o sm" href="https://www.figma.com/proto/mN5W9XFg8yJa9j6w8yaWQO/SAJI?node-id=41-38&amp;t=QUMOFMoK4x8hDKq4-1" target="_blank" rel="noopener">Open prototype ↗</a><a class="btn o sm" href="saji-venture-creation.pdf" target="_blank" rel="noopener">Full deck (PDF)</a><a class="btn o sm" href="https://youtu.be/egwcyOJWJws" target="_blank" rel="noopener">Interview video ↗</a></div>
       </div>
@@ -467,7 +548,6 @@ try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.th
 <section id="experience"><div class="w">
   <div class="sh rv"><div class="mono">03 — Experience</div><div><h2>Experience &amp; <em>education.</em></h2><p class="sub">From organizing school events to running a business and a startup team.</p></div></div>
   <div class="xp">
-    <div class="stack">
       <div class="card rv"><h3><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></i>Work &amp; ventures</h3><div class="tl">
         <div><small class="mono">2024 – now</small><h4>Co-Founder, Olivia Floristry</h4><p>Floral shop in Gading Serpong. Handle operations, stock and finances with my partner, and fulfil 20–30 orders a month in peak season.</p></div>
         <div><small class="mono">2024 – now</small><h4>Crypto Trader / Investor (Spot)</h4><p>Technical and macro analysis for long-term investment decisions, with disciplined risk management and portfolio tracking.</p></div>
@@ -477,11 +557,11 @@ try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.th
         <div><small class="mono">2022</small><h4>MPLS Organizer</h4><p>SMAS Tarakanita. Part of the committee for the new-student orientation.</p></div>
         <div><small class="mono">2021 – 2022</small><h4>Member, Dewan Kerja Ambalan</h4><p>SMAS Tarakanita. First leadership role in the school scouting council.</p></div>
       </div></div>
-    </div>
-    <div class="card rv" style="align-self:start"><h3><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2.5 9 2.5 12 0v-5"/></svg></i>Education</h3><div class="tl">
-      <div><small class="mono">2024 – now</small><h4>Binus University, Alam Sutera</h4><p>S1 Information Systems, accelerated 3.5-year track using short semesters. GPA 3.34, estimated graduation 2028.</p></div>
+    <div class="card rv"><h3><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2.5 9 2.5 12 0v-5"/></svg></i>Education</h3><div class="tl">
+      <div><small class="mono">2024 – now</small><h4>Binus University, Alam Sutera</h4><p>S1 Information Systems, accelerated 3.5-year track using short semesters.</p></div>
       <div><small class="mono">2021 – 2024</small><h4>SMAS Tarakanita, Gading Serpong</h4><p>Senior high school.</p></div>
-    </div></div>
+    </div>
+    <dl class="edu"><div><dt>GPA</dt><dd>3.34</dd></div><div><dt>Year track</dt><dd>3.5</dd></div><div><dt>Est. graduation</dt><dd>2028</dd></div></dl></div>
   </div>
 </div></section>
 

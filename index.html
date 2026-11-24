@@ -220,16 +220,14 @@ h2 em{font-style:italic;color:var(--ac)}
 .pc:hover{border-color:color-mix(in srgb,var(--ac) 50%,var(--ln));transform:translateY(-3px)}
 .pm{position:relative;background:#fff;min-height:260px;display:grid;place-items:center;border-right:1px solid var(--ln)}
 .pm img{width:100%;height:100%;object-fit:contain;position:absolute;inset:0}
-.pm.logo img{position:static;width:min(62%,230px);height:auto}
+.pm.logo img{position:static;width:min(72%,290px);height:auto}
 .pm.saji{background:#fffaec;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:22px 18px}
 .pm.saji img{position:static;width:min(50%,176px);height:auto}
 .pm.saji a{display:block;width:100%;border-radius:12px;overflow:hidden;border:1px solid #e6dcc2;transition:transform .25s}
 .pm.saji a:hover{transform:scale(1.03)}
 .pm.saji a img{width:100%}
-.pm.cover{overflow:hidden;background:#2b1a10}
-.pm.cover::before{content:"";position:absolute;inset:-30px;background:url(treasure-pop.jpg) center/cover;filter:blur(18px) brightness(.6)}
-.pm.cover img{position:relative;inset:auto;height:auto;aspect-ratio:884/462;object-fit:cover;object-position:50% 100%;
-  -webkit-mask-image:linear-gradient(transparent,#000 9%,#000 94%,transparent);mask-image:linear-gradient(transparent,#000 9%,#000 94%,transparent)}
+.pm.treasure{background:#fdf3e2;padding:8px 0 24px}
+.pm.treasure img{width:min(82%,330px)}
 .pm .n{position:absolute;top:16px;left:16px;z-index:1;background:var(--tx);color:var(--bg);padding:4px 10px;border-radius:999px}
 .pb{padding:32px 36px 34px;display:flex;flex-direction:column}
 .meta{color:var(--hot);margin-bottom:10px}
@@ -513,7 +511,7 @@ try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.th
   <div class="sh rv"><div class="mono">02 — Projects</div><div><h2>Selected <em>projects.</em></h2><p class="sub">Each one started as a real problem, then went through requirements, documentation and a prototype.</p></div></div>
   <div class="pl">
     <article class="pc rv">
-      <div class="pm logo"><span class="n mono">01</span><img src="allfresh-logo.jpg" alt="AllFresh logo"></div>
+      <div class="pm logo"><span class="n mono">01</span><img src="allfresh-logo.png" alt="AllFresh supermarket logo"></div>
       <div class="pb">
         <div class="meta mono">Campus minor project · App prototype</div>
         <h3>AllFresh</h3>
@@ -533,7 +531,7 @@ try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.th
       </div>
     </article>
     <article class="pc rv">
-      <div class="pm cover"><span class="n mono">03</span><img src="treasure-pop.jpg" alt="Treasure Pop mystery jewelry jars in three sizes: large 350ml, medium 200ml, small 100ml"></div>
+      <div class="pm logo treasure"><span class="n mono">03</span><img src="treasure-pop-logo.png" alt="Treasure Pop logo: a jewelry jar popping open with gems"></div>
       <div class="pb">
         <div class="meta mono">Group project · Team of 5</div>
         <h3>Treasure Pop</h3>
